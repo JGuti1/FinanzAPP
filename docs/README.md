@@ -290,20 +290,6 @@ FinanzApp-Colombia/
 
 Este proyecto está bajo la **Licencia MIT** - ver el archivo [LICENSE](LICENSE) para más detalles.
 
-## 📞 Soporte y Contacto
-
-### 🆘 ¿Necesitas Ayuda?
-
-- **Issues**: Reporta bugs o solicita features en GitHub
-- **Discussions**: Participa en conversaciones sobre el proyecto
-- **Wiki**: Consulta la documentación detallada
-
-### 📧 Contacto Directo
-
-- **Email**: [tu-email@ejemplo.com]
-- **GitHub**: [@tu-usuario]
-- **LinkedIn**: [tu-perfil-linkedin]
-
 ### 🌟 Agradecimientos
 
 - **BudgetDuo** por la inspiración en el diseño
