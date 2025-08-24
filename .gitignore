@@ -1,0 +1,295 @@
+# ========================================
+# FINANZAPP COLOMBIA - .GITIGNORE
+# ========================================
+# 
+# Este archivo especifica qué archivos y directorios
+# deben ser ignorados por Git en el proyecto.
+# 
+# Autor: FinanzApp Colombia
+# Fecha: 2024
+# ========================================
+
+# ========================================
+# SISTEMAS OPERATIVOS
+# ========================================
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ========================================
+# EDITORES Y IDEs
+# ========================================
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+.history/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+*.iws
+*.ipr
+*.iml
+
+# WebStorm
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# ========================================
+# DEPENDENCIAS Y PAQUETES
+# ========================================
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ========================================
+# ARCHIVOS TEMPORALES
+# ========================================
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# Grunt intermediate storage
+.grunt
+
+# Bower dependency directory
+bower_components
+
+# ========================================
+# ARCHIVOS DE CONSTRUCCIÓN
+# ========================================
+
+# Build outputs
+dist/
+build/
+out/
+.next/
+.nuxt/
+.vuepress/dist
+
+# Compiled source
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# ========================================
+# ARCHIVOS DE CONFIGURACIÓN LOCAL
+# ========================================
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Configuration files
+config.local.js
+config.local.json
+*.local.*
+
+# ========================================
+# ARCHIVOS DE BASE DE DATOS
+# ========================================
+
+# SQLite
+*.db
+*.sqlite
+*.sqlite3
+
+# MySQL
+*.sql
+
+# PostgreSQL
+*.psql
+
+# ========================================
+# ARCHIVOS DE BACKUP
+# ========================================
+
+# Backup files
+*.bak
+*.backup
+*.old
+*.orig
+*.save
+*.swp
+*.tmp
+
+# ========================================
+# ARCHIVOS ESPECÍFICOS DEL PROYECTO
+# ========================================
+
+# Archivos de desarrollo local
+local/
+dev/
+test/
+
+# Archivos de caché
+.cache/
+.temp/
+
+# Archivos de usuario
+user-data/
+personal/
+
+# ========================================
+# ARCHIVOS DE SEGURIDAD
+# ========================================
+
+# Keys and certificates
+*.key
+*.pem
+*.crt
+*.p12
+*.pfx
+
+# SSH keys
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub
+
+# ========================================
+# ARCHIVOS DE TESTING
+# ========================================
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Test results
+test-results/
+junit.xml
+
+# ========================================
+# ARCHIVOS DE DEPLOYMENT
+# ========================================
+
+# Deployment artifacts
+deploy/
+production/
+staging/
+
+# ========================================
+# NOTAS IMPORTANTES
+# ========================================
+# 
+# - Este .gitignore está diseñado específicamente para FinanzApp Colombia
+# - Incluye patrones comunes para proyectos web y JavaScript
+# - Personaliza según las necesidades específicas de tu entorno
+# - Revisa regularmente para mantener la seguridad del proyecto
+# 
+# ========================================

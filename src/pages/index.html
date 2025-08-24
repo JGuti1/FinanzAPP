@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- ========================================
+         METADATOS Y CONFIGURACIÓN PRINCIPAL
+    ======================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FinanzApp Colombia - Tu aliado financiero para planificación individual y en pareja. Toma el control de tus finanzas con métodos probados y consejos expertos.">
+    <meta name="keywords" content="finanzas, presupuesto, colombia, ahorro, planificación financiera, parejas">
+    <meta name="author" content="FinanzApp Colombia">
+    
+    <!-- Título de la página -->
+    <title>FinanzApp Colombia - Tu Aliado Financiero</title>
+    
+    <!-- ========================================
+         RECURSOS EXTERNOS Y CDNs
+    ======================================== -->
+    <!-- Tailwind CSS - Framework de utilidades CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts - Tipografía Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- ========================================
+         CONFIGURACIÓN DE TAILWIND CSS
+    ======================================== -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    // Configuración de fuente personalizada
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    // Paleta de colores personalizada para FinanzApp
+                    colors: {
+                        // Colores primarios - Azul profesional
+                        primary: {
+                            50: '#eff6ff',   // Azul muy claro
+                            100: '#dbeafe',  // Azul claro
+                            200: '#bfdbfe',  // Azul medio claro
+                            300: '#93c5fd',  // Azul medio
+                            400: '#60a5fa',  // Azul
+                            500: '#3b82f6',  // Azul principal
+                            600: '#2563eb',  // Azul oscuro
+                            700: '#1d4ed8',  // Azul muy oscuro
+                            800: '#1e40af',  // Azul profundo
+                            900: '#1e3a8a',  // Azul marino
+                        },
+                        // Colores de acento - Morado vibrante
+                        accent: {
+                            50: '#fdf4ff',   // Morado muy claro
+                            100: '#fae8ff',  // Morado claro
+                            200: '#f5d0fe',  // Morado medio claro
+                            300: '#f0abfc',  // Morado medio
+                            400: '#e879f9',  // Morado
+                            500: '#d946ef',  // Morado principal
+                            600: '#c026d3',  // Morado oscuro
+                            700: '#a21caf',  // Morado muy oscuro
+                            800: '#86198f',  // Morado profundo
+                            900: '#701a75',  // Morado marino
+                        },
+                        // Colores de éxito - Verde
+                        success: {
+                            50: '#f0fdf4',   // Verde muy claro
+                            100: '#dcfce7',  // Verde claro
+                            200: '#bbf7d0',  // Verde medio claro
+                            300: '#86efac',  // Verde medio
+                            400: '#4ade80',  // Verde
+                            500: '#22c55e',  // Verde principal
+                            600: '#16a34a',  // Verde oscuro
+                            700: '#15803d',  // Verde muy oscuro
+                            800: '#166534',  // Verde profundo
+                            900: '#14532d',  // Verde marino
+                        },
+                        // Colores de advertencia - Amarillo
+                        warning: {
+                            50: '#fffbeb',   // Amarillo muy claro
+                            100: '#fef3c7',  // Amarillo claro
+                            200: '#fde68a',  // Amarillo medio claro
+                            300: '#fcd34d',  // Amarillo medio
+                            400: '#fbbf24',  // Amarillo
+                            500: '#f59e0b',  // Amarillo principal
+                            600: '#d97706',  // Amarillo oscuro
+                            700: '#b45309',  // Amarillo muy oscuro
+                            800: '#92400e',  // Amarillo profundo
+                            900: '#78350f',  // Amarillo marino
+                        },
+                        // Colores de peligro - Rojo
+                        danger: {
+                            50: '#fef2f2',   // Rojo muy claro
+                            100: '#fee2e2',  // Rojo claro
+                            200: '#fecaca',  // Rojo medio claro
+                            300: '#fca5a5',  // Rojo medio
+                            400: '#f87171',  // Rojo
+                            500: '#ef4444',  // Rojo principal
+                            600: '#dc2626',  // Rojo oscuro
+                            700: '#b91c1c',  // Rojo muy oscuro
+                            800: '#991b1b',  // Rojo profundo
+                            900: '#7f1d1d',  // Rojo marino
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- ========================================
+         ESTILOS PERSONALIZADOS
+    ======================================== -->
+    <style>
+        /* Texto con gradiente para elementos destacados */
+        .gradient-text {
+            background: linear-gradient(135deg, #3b82f6 0%, #d946ef 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Efecto de cristal para navegación */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        /* Animación flotante para tarjetas principales */
+        .floating-card {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Keyframes para animación flotante */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        /* Animación de entrada deslizante */
+        .slide-in {
+            animation: slideIn 0.8s ease-out;
+        }
+        
+        /* Keyframes para entrada deslizante */
+        @keyframes slideIn {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        /* Gradiente para hero section */
+        .hero-gradient {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+    </style>
+</head>
+
+<body class="font-inter bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 min-h-screen">
+    <!-- ========================================
+         BARRA DE NAVEGACIÓN PRINCIPAL
+    ======================================== -->
+    <nav class="fixed top-0 w-full z-50 glass-effect">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo y nombre de la aplicación -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-accent-500 rounded-2xl flex items-center justify-center">
+                        <span class="text-white text-2xl font-bold">💰</span>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-bold gradient-text">FinanzApp</span>
+                        <span class="text-sm text-slate-600 block -mt-1">Colombia</span>
+                    </div>
+                </div>
+                
+                <!-- Enlaces de navegación -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-slate-700 hover:text-primary-600 transition-colors">Características</a>
+                    <a href="#how-it-works" class="text-slate-700 hover:text-primary-600 transition-colors">Cómo Funciona</a>
+                    <a href="#contact" class="text-slate-700 hover:text-primary-600 transition-colors">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ========================================
+         SECCIÓN HERO PRINCIPAL
+    ======================================== -->
+    <section class="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto text-center">
+            <!-- Tarjeta principal flotante -->
+            <div class="floating-card inline-block mb-12">
+                <div class="hero-gradient p-10 rounded-3xl shadow-2xl text-white">
+                    <h1 class="text-5xl md:text-7xl font-black mb-6">
+                        Tu Aliado
+                        <span class="block">Financiero</span>
+                    </h1>
+                    <p class="text-xl md:text-2xl text-white/90 max-w-4xl mx-auto leading-relaxed mb-8">
+                        La herramienta definitiva para que los colombianos tomen el control de sus finanzas, 
+                        ya sea solos o en pareja. Construye tu futuro financiero con métodos probados y consejos expertos.
+                    </p>
+                    
+                    <!-- Botones de acción principales -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="individual.html" class="bg-white text-primary-600 px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-100 transform hover:scale-105 transition-all duration-200 shadow-lg">
+                            💰 Planificación Individual
+                        </a>
+                        <a href="parejas.html" class="bg-accent-500 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-accent-600 transform hover:scale-105 transition-all duration-200 shadow-lg">
+                            💑 Planificación en Pareja
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- ========================================
+                 SECCIÓN DE ESTADÍSTICAS
+            ======================================== -->
+            <div class="grid md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-16">
+                <!-- Estadística 1: Comprensión financiera -->
+                <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
+                    <div class="text-3xl font-bold text-primary-600 mb-2">16%</div>
+                    <p class="text-slate-600 text-sm">Colombianos entienden finanzas básicas</p>
+                </div>
+                
+                <!-- Estadística 2: Planificación de gastos -->
+                <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
+                    <div class="text-3xl font-bold text-accent-600 mb-2">42%</div>
+                    <p class="text-slate-600 text-sm">No planifican sus gastos</p>
+                </div>
+                
+                <!-- Estadística 3: Gratuidad -->
+                <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
+                    <div class="text-3xl font-bold text-success-600 mb-2">100%</div>
+                    <p class="text-slate-600 text-sm">Gratuito y accesible</p>
+                </div>
+                
+                <!-- Estadística 4: Disponibilidad -->
+                <div class="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
+                    <div class="text-3xl font-bold text-warning-600 mb-2">24/7</div>
+                    <p class="text-slate-600 text-sm">Disponible cuando lo necesites</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECCIÓN DE ELECCIÓN DE MODALIDAD
+    ======================================== -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white/60 backdrop-blur-sm">
+        <div class="max-w-6xl mx-auto">
+            <!-- Encabezado de la sección -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
+                    ¿Cómo quieres
+                    <span class="gradient-text">planificar?</span>
+                </h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                    Elige la opción que mejor se adapte a tu situación y comienza a construir tu futuro financiero
+                </p>
+            </div>
+
+            <!-- Grid de opciones -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- ========================================
+                     OPCIÓN 1: PLANIFICACIÓN INDIVIDUAL
+                ======================================== -->
+                <div class="bg-white rounded-3xl shadow-2xl border border-slate-200 p-8 md:p-12 hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2">
+                    <!-- Icono y título -->
+                    <div class="text-center mb-8">
+                        <div class="w-24 h-24 bg-gradient-to-br from-primary-100 to-blue-100 rounded-3xl flex items-center justify-center mx-auto mb-6">
+                            <span class="text-4xl">💰</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-slate-800 mb-4">Planificación Individual</h3>
+                        <p class="text-slate-600 text-lg leading-relaxed">
+                            Perfecto para personas solteras, independientes o que quieren manejar sus finanzas de forma personal
+                        </p>
+                    </div>
+                    
+                    <!-- Lista de características -->
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center">
+                                <span class="text-primary-600 text-sm">✓</span>
+                            </div>
+                            <span class="text-slate-700">Un solo ingreso mensual</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center">
+                                <span class="text-primary-600 text-sm">✓</span>
+                            </div>
+                            <span class="text-slate-700">Métodos 50/30/20 y 70/20/10</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center">
+                                <span class="text-primary-600 text-sm">✓</span>
+                            </div>
+                            <span class="text-slate-700">Porcentajes personalizados</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center">
+                                <span class="text-primary-600 text-sm">✓</span>
+                            </div>
+                            <span class="text-slate-700">Consejos personalizados para Colombia</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Botón de acción -->
+                    <div class="text-center">
+                        <a href="individual.html" class="bg-gradient-to-r from-primary-600 to-blue-600 text-white px-12 py-4 rounded-full text-xl font-bold hover:from-primary-700 hover:to-blue-700 transform hover:scale-105 transition-all duration-200 shadow-xl hover:shadow-2xl inline-block">
+                            Comenzar Individual
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ========================================
+                     OPCIÓN 2: PLANIFICACIÓN EN PAREJA
+                ======================================== -->
+                <div class="bg-white rounded-3xl shadow-2xl border border-slate-200 p-8 md:p-12 hover:shadow-3xl transition-all duration-300 transform hover:-translate-y-2">
+                    <!-- Icono y título -->
+                    <div class="text-center mb-8">
+                        <div class="w-24 h-24 bg-gradient-to-br from-accent-100 to-purple-100 rounded-3xl flex items-center justify-center mx-auto mb-6">
+                            <span class="text-4xl">💑</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-slate-800 mb-4">Planificación en Pareja</h3>
+                        <p class="text-slate-600 text-lg leading-relaxed">
+                            Ideal para parejas que quieren construir su futuro financiero juntos y alcanzar metas compartidas
+                        </p>
+                    </div>
+                    
+                    <!-- Lista de características -->
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-accent-100 rounded-full flex items-center justify-center">
+                                <span class="text-accent-600 text-sm">✓</span>
+                            </div>
+                            <span class="text-slate-700">Dos ingresos combinados</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-accent-100 rounded-full flex items-center justify-center">
+                                <span class="text-accent-600 text-sm">✓</span>
+                            </div>
+                            <span class="text-slate-700">Nombres personalizables</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-accent-100 rounded-full flex items-center justify-center">
+                                <span class="text-accent-600 text-sm">✓</span>
+                            </div>
+                            <span class="text-slate-700">Total combinado en tiempo real</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="w-6 h-6 bg-accent-100 rounded-full flex items-center justify-center">
+                                <span class="text-accent-600 text-sm">✓</span>
+                            </div>
+                            <span class="text-slate-700">Consejos específicos para parejas</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Botón de acción -->
+                    <div class="text-center">
+                        <a href="parejas.html" class="bg-gradient-to-r from-accent-600 to-purple-600 text-white px-12 py-4 rounded-full text-xl font-bold hover:from-accent-700 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-xl hover:shadow-2xl inline-block">
+                            Comenzar en Pareja
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECCIÓN DE CARACTERÍSTICAS
+    ======================================== -->
+    <section id="features" class="py-20 px-4 sm:px-6 lg:px-8 bg-white/60 backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto">
+            <!-- Encabezado de características -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
+                    ¿Por qué elegir
+                    <span class="gradient-text">FinanzApp</span>?
+                </h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                    Diseñado específicamente para colombianos que quieren tomar el control de sus finanzas
+                </p>
+            </div>
+
+            <!-- Grid de características -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Característica 1: Contexto Colombiano -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-200">
+                    <div class="w-16 h-16 bg-primary-100 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="text-2xl">🇨🇴</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Contexto Colombiano</h3>
+                    <p class="text-slate-600">Consejos y estrategias adaptadas a la realidad económica de Colombia</p>
+                </div>
+
+                <!-- Característica 2: Responsive Design -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-200">
+                    <div class="w-16 h-16 bg-accent-100 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="text-2xl">📱</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">100% Responsive</h3>
+                    <p class="text-slate-600">Funciona perfectamente en todos los dispositivos, móvil y desktop</p>
+                </div>
+
+                <!-- Característica 3: Metas Claras -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-200">
+                    <div class="w-16 h-16 bg-success-100 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="text-2xl">🎯</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Metas Claras</h3>
+                    <p class="text-slate-600">Define objetivos específicos y trabaja hacia ellos de manera sistemática</p>
+                </div>
+
+                <!-- Característica 4: Visualización Clara -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-200">
+                    <div class="w-16 h-16 bg-warning-100 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="text-2xl">📊</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Visualización Clara</h3>
+                    <p class="text-slate-600">Gráficos intuitivos que te ayudan a entender tu situación financiera</p>
+                </div>
+
+                <!-- Característica 5: Privacidad Total -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-200">
+                    <div class="w-16 h-16 bg-danger-100 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="text-2xl">🔒</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Privacidad Total</h3>
+                    <p class="text-slate-600">Tus datos nunca salen de tu dispositivo, 100% seguro y privado</p>
+                </div>
+
+                <!-- Característica 6: Consejos Expertos -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-200">
+                    <div class="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center mb-6">
+                        <span class="text-2xl">💡</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-800 mb-4">Consejos Expertos</h3>
+                    <p class="text-slate-600">Basados en las mejores prácticas financieras y el contexto colombiano</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECCIÓN "CÓMO FUNCIONA"
+    ======================================== -->
+    <section id="how-it-works" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-primary-50 to-accent-50">
+        <div class="max-w-6xl mx-auto">
+            <!-- Encabezado de la sección -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-slate-800 mb-6">
+                    ¿Cómo
+                    <span class="gradient-text">funciona?</span>
+                </h2>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                    Tres pasos simples para transformar tu vida financiera
+                </p>
+            </div>
+
+            <!-- Grid de pasos -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Paso 1: Elegir Plan -->
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-primary-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-3xl font-bold">
+                        1
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Elige tu Plan</h3>
+                    <p class="text-slate-600">Decide si quieres planificar individualmente o en pareja</p>
+                </div>
+
+                <!-- Paso 2: Ingresar Datos -->
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-accent-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-3xl font-bold">
+                        2
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Ingresa tus Datos</h3>
+                    <p class="text-slate-600">Coloca tus ingresos y elige el método de distribución</p>
+                </div>
+
+                <!-- Paso 3: Obtener Plan -->
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-success-500 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-3xl font-bold">
+                        3
+                    </div>
+                    <h3 class="text-2xl font-bold text-slate-800 mb-4">Obtén tu Plan</h3>
+                    <p class="text-slate-600">Recibe tu presupuesto detallado con gráficos y consejos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECCIÓN CALL-TO-ACTION (CTA)
+    ======================================== -->
+    <section class="py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="bg-gradient-to-r from-primary-600 to-accent-600 rounded-3xl p-12 text-white">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    ¿Listo para cambiar tu
+                    <span class="block">vida financiera?</span>
+                </h2>
+                <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                    Únete a miles de colombianos que ya están tomando el control de sus finanzas
+                </p>
+                
+                <!-- Botones de acción -->
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="../pages/individual.html" class="bg-white text-primary-600 px-8 py-4 rounded-full text-lg font-bold hover:bg-gray-100 transform hover:scale-105 transition-all duration-200 shadow-lg">
+                        Comenzar Individual
+                    </a>
+                    <a href="../pages/parejas.html" class="bg-accent-500 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-accent-700 transform hover:scale-105 transition-all duration-200 shadow-lg border-2 border-white">
+                        Comenzar en Pareja
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         PIE DE PÁGINA
+    ======================================== -->
+    <footer class="bg-slate-900 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <!-- Logo del footer -->
+                <div class="flex items-center justify-center space-x-3 mb-6">
+                    <div class="w-12 h-12 bg-gradient-to-br from-primary-500 to-accent-500 rounded-2xl flex items-center justify-center">
+                        <span class="text-white text-2xl font-bold">💰</span>
+                    </div>
+                    <div>
+                        <span class="text-2xl font-bold">FinanzApp</span>
+                        <span class="text-sm text-slate-400 block -mt-1">Colombia</span>
+                    </div>
+                </div>
+                
+                <!-- Texto del footer -->
+                <p class="text-slate-400 text-lg mb-4">
+                    Construyendo futuros financieros en Colombia
+                </p>
+                <p class="text-slate-500">
+                    &copy; 2024 FinanzApp Colombia - Educación Financiera para Todos
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
