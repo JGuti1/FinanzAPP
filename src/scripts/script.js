@@ -80,7 +80,7 @@ const FINANCIAL_TIPS = [
     },
     {
         title: "💰 Ahorro: Construye tu colchón",
-        description: "Aim for 3-6 meses de gastos en tu fondo de emergencia. Considera CDT, fondos de inversión colectiva o cuentas de ahorro programado.",
+        description: "Ahorra al menos 3-6 meses de gastos en tu fondo de emergencia. Considera CDT, fondos de inversión colectiva o cuentas de ahorro programado.",
         category: "ahorro"
     },
     {
@@ -421,14 +421,17 @@ function calculateBudget() {
     // Mostrar resultados
     displayResults(distribution);
     
+    // Mostrar sección de resultados (asegura que el canvas esté visible antes de inicializar Chart.js)
+    showResults();
+    
     // Generar gráfico
     generateChart(distribution);
     
+    // Forzar un resize en el siguiente frame por si el layout tarda en estabilizarse
+    requestAnimationFrame(() => { if (currentChart) currentChart.resize(); });
+    
     // Mostrar consejos
     displayTips();
-    
-    // Mostrar sección de resultados
-    showResults();
     
     console.log('💰 Presupuesto calculado exitosamente');
 }
